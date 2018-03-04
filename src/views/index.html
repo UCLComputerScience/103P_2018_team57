@@ -1,9 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <!-- MultiStep Form -->
 <div class="row">
-    <div class="col-md-6 col-md-offset-3" style="margin: auto">
+  <div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+      <li class="active"><a href="#">Overview</a></li>
+      <li><a href="#">Draft video #1</a></li>
+    </ul>
+    <ul class="nav nav-sidebar">
+      <li><a href="#">Approved video #1</a></li>
+    </ul>
+  </div>
+  <div class="col-md-6 col-md-offset-3" style="margin: auto">
         <form id="msform">
             <!-- progressbar -->
             <ul id="progressbar">
@@ -36,6 +46,7 @@
                 <input type="text" name="fname" placeholder="First Name"/>
                 <input type="text" name="lname" placeholder="Last Name"/>
                 <input type="text" name="phone" placeholder="Phone"/>
+                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
                 <input type="button" name="next" class="next action-button" value="Next"/>
             </fieldset>
             <fieldset>
