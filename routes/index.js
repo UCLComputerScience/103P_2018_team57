@@ -37,18 +37,18 @@ module.exports = function(app) {
 		res.redirect(`/project/${projectID}`)
 	})
 
-	app.get('/download/Guardian', function(req, res){
-		var file = __dirname + '/../public/res/Generic_Guardian Release_form_template.doc';
+	app.get('/download/templates', function(req, res){
+		var file = __dirname + '/../public/res/Templates.zip';
 		res.download(file);
 	})
 
-	app.get('/download/Location', function(req, res){
-		var file = __dirname + '/../public/res/Location_Release_form_template.doc';
+	app.get('/download/guides', function(req, res){
+		var file = __dirname + '/../public/res/Guides.zip';
 		res.download(file);
 	})
 
-	app.get('/download/Personal', function(req, res){
-		var file = __dirname + '/../public/res/Personal_Guardian Release_form_template.doc';
+	app.get('/download/suppliers', function(req, res){
+		var file = __dirname + '/../public/res/Supplier\ table.pdf';
 		res.download(file);
 	})
 
