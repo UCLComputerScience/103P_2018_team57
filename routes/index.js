@@ -2,7 +2,7 @@ const db = require("../lib/db")
 
 module.exports = function(app) {
 	app.get("/", function(req, res) {
-		res.redirect("/project/project-1")
+		res.redirect("/project/6f404e57-4407-4849-bec3-689ef714a206")
 	})
 
 	app.get("/project/:projectID", function(req, res) {
