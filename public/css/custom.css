@@ -26,6 +26,10 @@ body {
   border: 0;
 }
 
+.nav-btn {
+  font-size: 13px;
+}
+
 /*
  * Sidebar
  */
@@ -161,7 +165,19 @@ body {
     margin: 10px 5px;
 }
 
-#msform .action-button:hover, #msform .action-button:focus, #msform .download-button:hover {
+#msform .submit-button {
+    width: 200px;
+    background: #f3b20a;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#msform .action-button:hover, #msform .action-button:focus, #msform .download-button:hover, #msform .submit-button:hover {
     box-shadow: 0 0 0 2px white, 0 0 0 3px #f3b20a;
 }
 
@@ -275,4 +291,22 @@ body {
 .dme_link a:hover, .dme_link a:focus {
     background: #C5C5F1;
     text-decoration: none;
+}
+
+.state-icon {
+    left: -5px;
+}
+.list-group-item-primary {
+    color: rgb(255, 255, 255);
+    background-color: rgb(66, 139, 202);
+}
+
+.checklist {
+  text-align: left;
+  max-width: 400px;
+  margin: auto;
+}
+
+.no-underline {
+  text-decoration: none !important;
 }
