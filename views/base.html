@@ -6,12 +6,12 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="Hiru Ranasinghe">
-    <link rel="icon" href="https://getbootstrap.com/docs/3.3/favicon.ico">
+    <link rel="icon" href="../public/res/favicon.ico">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <title>
       {% if title %}
-      {{title}}
+      {{project.projectName}}
       {% else %}
       UCL Video Guidelines
       {% endif %}
@@ -35,23 +35,22 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="https://getbootstrap.com/docs/3.3/examples/dashboard/#">UCL Video Guidelines</a>
+          <a class="navbar-brand" href="http://www.uclengvid.azurewebsites.net/">UCL Video Guidelines</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <form method="POST" action="/project/new">
+              <form method="POST" action="/new/{{upi}}/{{name}}">
                 <button class="navbar-brand btn btn-link nav-btn" type="submit">New Project</button>
               </form>
             </li>
             <li>
-              <form method="POST" action="/project/delete">
-                <button class="navbar-brand btn btn-link nav-btn" type="submit">Delete Project</button>
+              <form method="POST" action="/delete/{{currentProjectID}}/{{upi}}/{{name}}">
+                <button class="navbar-brand btn btn-link nav-btn confirm" type="submit">Delete Project</button>
               </form>
             </li>
             <li>
-                <!-- TODO: change to users name -->
-                <a class="navbar-brand btn btn-link" role="button">{{project.approver}}</a>
+              <button class="navbar-brand btn btn-link nav-btn">{{name}}</button>
             </li>
           </ul>
         </div>
@@ -63,11 +62,8 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             {% for project in projects %}
-            <li class="{% if project._id == currentProjectID %} active {% endif %}"><a href="/project/{{project._id}}">{{project.projectName}}</a></li>
+            <li class="{% if project._id == currentProjectID %} active {% endif %}"><a href="/project/{{project._id}}/{{upi}}/{{name}}">{{project.data.projectName}}</a></li>
             {% endfor %}
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="#">Approved video #1</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
